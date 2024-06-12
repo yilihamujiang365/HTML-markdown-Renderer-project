@@ -1,5 +1,5 @@
 # HTML-markdown-Renderer
-![软件界面](https://github.moeyy.xyz/https://raw.githubusercontent.com/yilihamujiang365/HTML-markdown-Renderer-project/master/picture/screanphoto.png"软件界面截图")
+![软件界面](https://github.moeyy.xyz/https://raw.githubusercontent.com/yilihamujiang365/HTML-markdown-Renderer-project/master/picture/screanphoto.png)
 ## 关于此程序
 ### 程序
 此程序的主要作用为HTML和Markdown的实时预览，旨在为开发爱好者提供舒适的开发环境和体验<br>
@@ -9,7 +9,9 @@ E-mail：yilihamujiang365@outlook.com
 #### 目前已实现的功能有
 ##### 1.实时预览HTML网页，并支持打开，保存💾等功能
 ##### 2.实时预览MarkDown文件，并支持打开，保存💾等功能
-### 作者
+### 反馈意见或者提出意见
+![反馈意见表QRCode](picture/反馈意见表QRCode.png)<br>
+请扫描上面二维码或者点击下面链接🔗进行反馈意见或者提出意见
 https://forms.office.com/r/ryf0EZnNS0
 
 
