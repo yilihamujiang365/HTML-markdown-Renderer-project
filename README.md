@@ -10,7 +10,7 @@ E-mail：yilihamujiang365@outlook.com
 ##### 1.实时预览HTML网页，并支持打开，保存💾等功能
 ##### 2.实时预览MarkDown文件，并支持打开，保存💾等功能
 ### 反馈意见或者提出意见
-![反馈意见表QRCode](picture/反馈意见表QRCode.png)<br>
+![](https://github.moeyy.xyz/https://raw.githubusercontent.com/yilihamujiang365/HTML-markdown-Renderer-project/master/picture/%E5%8F%8D%E9%A6%88%E6%84%8F%E8%A7%81%E8%A1%A8QRCode.png)
 请扫描上面二维码或者点击下面链接🔗进行反馈意见或者提出意见
 https://forms.office.com/r/ryf0EZnNS0
 
