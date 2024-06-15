@@ -17,7 +17,7 @@ https://forms.office.com/r/ryf0EZnNS0
 
 
 ## 安装与使用
-在![Release](https://github.com/yilihamujiang365/HTML-markdown-Renderer-project/releases)<br>页面下载后解压.zip文件，点击setup.exe进行安装，注意⚠️，此软件不会在桌面生成快捷方式，只在开始菜单生成快捷方式
+在https://github.com/yilihamujiang365/HTML-markdown-Renderer-project/releases页面下载后解压.zip文件，点击setup.exe进行安装，注意⚠️，此软件不会在桌面生成快捷方式，只在开始菜单生成快捷方式
 ## 关于开源协议
 本软件的开源协议是MIT
 ## 软件数据
