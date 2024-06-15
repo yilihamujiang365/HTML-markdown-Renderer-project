@@ -22,6 +22,6 @@ https://forms.office.com/r/ryf0EZnNS0
 本软件的开源协议是MIT
 ## 软件数据
 开发环境：Microsoft visual studio<br>
-编程语言：visual basic.NET<br>
+编程语言：Visual Basic.NET<br>
 .NET framwork 版本：4.8.1
 
