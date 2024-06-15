@@ -22,6 +22,7 @@ Partial Class Form1
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
@@ -32,8 +33,10 @@ Partial Class Form1
         Me.文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.打开ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.打开HTML文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.打开MarkDown文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.保存ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.保存HTML文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.保存MarkDown文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.退出ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.选项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.修改网页渲染编辑器字体选项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,8 +55,6 @@ Partial Class Form1
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.RichTextBoxmarkdown = New System.Windows.Forms.RichTextBox()
         Me.WebViewmarkdown = New Microsoft.Web.WebView2.WinForms.WebView2()
-        Me.打开MarkDown文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.保存MarkDown文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -81,11 +82,12 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.文件ToolStripMenuItem, Me.选项ToolStripMenuItem, Me.Webview选项ToolStripMenuItem, Me.关于ToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(876, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(876, 37)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -93,90 +95,102 @@ Partial Class Form1
         '
         Me.文件ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.打开ToolStripMenuItem, Me.保存ToolStripMenuItem, Me.退出ToolStripMenuItem})
         Me.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem"
-        Me.文件ToolStripMenuItem.Size = New System.Drawing.Size(54, 25)
+        Me.文件ToolStripMenuItem.Size = New System.Drawing.Size(66, 31)
         Me.文件ToolStripMenuItem.Text = "文件"
         '
         '打开ToolStripMenuItem
         '
         Me.打开ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.打开HTML文件ToolStripMenuItem, Me.打开MarkDown文件ToolStripMenuItem})
         Me.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem"
-        Me.打开ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.打开ToolStripMenuItem.Size = New System.Drawing.Size(137, 32)
         Me.打开ToolStripMenuItem.Text = "打开"
         '
         '打开HTML文件ToolStripMenuItem
         '
         Me.打开HTML文件ToolStripMenuItem.Name = "打开HTML文件ToolStripMenuItem"
-        Me.打开HTML文件ToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
+        Me.打开HTML文件ToolStripMenuItem.Size = New System.Drawing.Size(283, 32)
         Me.打开HTML文件ToolStripMenuItem.Text = "打开HTML文件"
+        '
+        '打开MarkDown文件ToolStripMenuItem
+        '
+        Me.打开MarkDown文件ToolStripMenuItem.Name = "打开MarkDown文件ToolStripMenuItem"
+        Me.打开MarkDown文件ToolStripMenuItem.Size = New System.Drawing.Size(283, 32)
+        Me.打开MarkDown文件ToolStripMenuItem.Text = "打开MarkDown文件"
         '
         '保存ToolStripMenuItem
         '
         Me.保存ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.保存HTML文件ToolStripMenuItem, Me.保存MarkDown文件ToolStripMenuItem})
         Me.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem"
-        Me.保存ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.保存ToolStripMenuItem.Size = New System.Drawing.Size(137, 32)
         Me.保存ToolStripMenuItem.Text = "保存"
         '
         '保存HTML文件ToolStripMenuItem
         '
         Me.保存HTML文件ToolStripMenuItem.Name = "保存HTML文件ToolStripMenuItem"
-        Me.保存HTML文件ToolStripMenuItem.Size = New System.Drawing.Size(189, 26)
+        Me.保存HTML文件ToolStripMenuItem.Size = New System.Drawing.Size(283, 32)
         Me.保存HTML文件ToolStripMenuItem.Text = "保存HTML文件"
+        '
+        '保存MarkDown文件ToolStripMenuItem
+        '
+        Me.保存MarkDown文件ToolStripMenuItem.Name = "保存MarkDown文件ToolStripMenuItem"
+        Me.保存MarkDown文件ToolStripMenuItem.Size = New System.Drawing.Size(283, 32)
+        Me.保存MarkDown文件ToolStripMenuItem.Text = "保存MarkDown文件"
         '
         '退出ToolStripMenuItem
         '
         Me.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem"
-        Me.退出ToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.退出ToolStripMenuItem.Size = New System.Drawing.Size(137, 32)
         Me.退出ToolStripMenuItem.Text = "退出"
         '
         '选项ToolStripMenuItem
         '
         Me.选项ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.修改网页渲染编辑器字体选项ToolStripMenuItem, Me.修改MarkDown渲染编辑器字体选项ToolStripMenuItem})
         Me.选项ToolStripMenuItem.Name = "选项ToolStripMenuItem"
-        Me.选项ToolStripMenuItem.Size = New System.Drawing.Size(54, 25)
+        Me.选项ToolStripMenuItem.Size = New System.Drawing.Size(66, 31)
         Me.选项ToolStripMenuItem.Text = "选项"
         '
         '修改网页渲染编辑器字体选项ToolStripMenuItem
         '
         Me.修改网页渲染编辑器字体选项ToolStripMenuItem.Name = "修改网页渲染编辑器字体选项ToolStripMenuItem"
-        Me.修改网页渲染编辑器字体选项ToolStripMenuItem.Size = New System.Drawing.Size(341, 26)
+        Me.修改网页渲染编辑器字体选项ToolStripMenuItem.Size = New System.Drawing.Size(423, 32)
         Me.修改网页渲染编辑器字体选项ToolStripMenuItem.Text = "修改网页渲染编辑器字体选项"
         '
         '修改MarkDown渲染编辑器字体选项ToolStripMenuItem
         '
         Me.修改MarkDown渲染编辑器字体选项ToolStripMenuItem.Name = "修改MarkDown渲染编辑器字体选项ToolStripMenuItem"
-        Me.修改MarkDown渲染编辑器字体选项ToolStripMenuItem.Size = New System.Drawing.Size(341, 26)
+        Me.修改MarkDown渲染编辑器字体选项ToolStripMenuItem.Size = New System.Drawing.Size(423, 32)
         Me.修改MarkDown渲染编辑器字体选项ToolStripMenuItem.Text = "修改MarkDown渲染编辑器字体选项"
         '
         'Webview选项ToolStripMenuItem
         '
         Me.Webview选项ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.网页渲染器DevToolsToolToolStripMenuItem, Me.MarkDown渲染器DevToolsToolToolStripMenuItem})
         Me.Webview选项ToolStripMenuItem.Name = "Webview选项ToolStripMenuItem"
-        Me.Webview选项ToolStripMenuItem.Size = New System.Drawing.Size(120, 25)
+        Me.Webview选项ToolStripMenuItem.Size = New System.Drawing.Size(149, 31)
         Me.Webview选项ToolStripMenuItem.Text = "webview选项"
         '
         '网页渲染器DevToolsToolToolStripMenuItem
         '
         Me.网页渲染器DevToolsToolToolStripMenuItem.Name = "网页渲染器DevToolsToolToolStripMenuItem"
-        Me.网页渲染器DevToolsToolToolStripMenuItem.Size = New System.Drawing.Size(282, 26)
+        Me.网页渲染器DevToolsToolToolStripMenuItem.Size = New System.Drawing.Size(351, 32)
         Me.网页渲染器DevToolsToolToolStripMenuItem.Text = "网页渲染器DevTools"
         '
         'MarkDown渲染器DevToolsToolToolStripMenuItem
         '
         Me.MarkDown渲染器DevToolsToolToolStripMenuItem.Name = "MarkDown渲染器DevToolsToolToolStripMenuItem"
-        Me.MarkDown渲染器DevToolsToolToolStripMenuItem.Size = New System.Drawing.Size(282, 26)
+        Me.MarkDown渲染器DevToolsToolToolStripMenuItem.Size = New System.Drawing.Size(351, 32)
         Me.MarkDown渲染器DevToolsToolToolStripMenuItem.Text = "MarkDown渲染器DevTools"
         '
         '关于ToolStripMenuItem
         '
         Me.关于ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.关于此程序ToolStripMenuItem})
         Me.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem"
-        Me.关于ToolStripMenuItem.Size = New System.Drawing.Size(54, 25)
+        Me.关于ToolStripMenuItem.Size = New System.Drawing.Size(66, 31)
         Me.关于ToolStripMenuItem.Text = "关于"
         '
         '关于此程序ToolStripMenuItem
         '
         Me.关于此程序ToolStripMenuItem.Name = "关于此程序ToolStripMenuItem"
-        Me.关于此程序ToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.关于此程序ToolStripMenuItem.Size = New System.Drawing.Size(197, 32)
         Me.关于此程序ToolStripMenuItem.Text = "关于此程序"
         '
         'TabControl1
@@ -184,19 +198,19 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 31)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 37)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(876, 589)
+        Me.TabControl1.Size = New System.Drawing.Size(876, 583)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.SplitContainer1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(868, 559)
+        Me.TabPage1.Size = New System.Drawing.Size(868, 550)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -214,7 +228,7 @@ Partial Class Form1
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.WebViewHTML)
-        Me.SplitContainer1.Size = New System.Drawing.Size(862, 553)
+        Me.SplitContainer1.Size = New System.Drawing.Size(862, 544)
         Me.SplitContainer1.SplitterDistance = 287
         Me.SplitContainer1.TabIndex = 0
         '
@@ -223,7 +237,7 @@ Partial Class Form1
         Me.RichTextBoxHTML.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBoxHTML.Location = New System.Drawing.Point(0, 0)
         Me.RichTextBoxHTML.Name = "RichTextBoxHTML"
-        Me.RichTextBoxHTML.Size = New System.Drawing.Size(287, 553)
+        Me.RichTextBoxHTML.Size = New System.Drawing.Size(287, 544)
         Me.RichTextBoxHTML.TabIndex = 0
         Me.RichTextBoxHTML.Text = ""
         '
@@ -235,17 +249,17 @@ Partial Class Form1
         Me.WebViewHTML.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WebViewHTML.Location = New System.Drawing.Point(0, 0)
         Me.WebViewHTML.Name = "WebViewHTML"
-        Me.WebViewHTML.Size = New System.Drawing.Size(571, 553)
+        Me.WebViewHTML.Size = New System.Drawing.Size(571, 544)
         Me.WebViewHTML.TabIndex = 0
         Me.WebViewHTML.ZoomFactor = 1.0R
         '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.SplitContainer2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1729, 719)
+        Me.TabPage2.Size = New System.Drawing.Size(868, 556)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -263,8 +277,8 @@ Partial Class Form1
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.WebViewmarkdown)
-        Me.SplitContainer2.Size = New System.Drawing.Size(1723, 713)
-        Me.SplitContainer2.SplitterDistance = 574
+        Me.SplitContainer2.Size = New System.Drawing.Size(862, 550)
+        Me.SplitContainer2.SplitterDistance = 287
         Me.SplitContainer2.TabIndex = 0
         '
         'RichTextBoxmarkdown
@@ -272,7 +286,7 @@ Partial Class Form1
         Me.RichTextBoxmarkdown.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBoxmarkdown.Location = New System.Drawing.Point(0, 0)
         Me.RichTextBoxmarkdown.Name = "RichTextBoxmarkdown"
-        Me.RichTextBoxmarkdown.Size = New System.Drawing.Size(574, 713)
+        Me.RichTextBoxmarkdown.Size = New System.Drawing.Size(287, 550)
         Me.RichTextBoxmarkdown.TabIndex = 0
         Me.RichTextBoxmarkdown.Text = ""
         '
@@ -284,30 +298,19 @@ Partial Class Form1
         Me.WebViewmarkdown.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WebViewmarkdown.Location = New System.Drawing.Point(0, 0)
         Me.WebViewmarkdown.Name = "WebViewmarkdown"
-        Me.WebViewmarkdown.Size = New System.Drawing.Size(1145, 713)
+        Me.WebViewmarkdown.Size = New System.Drawing.Size(571, 550)
         Me.WebViewmarkdown.TabIndex = 0
         Me.WebViewmarkdown.ZoomFactor = 1.0R
         '
-        '打开MarkDown文件ToolStripMenuItem
-        '
-        Me.打开MarkDown文件ToolStripMenuItem.Name = "打开MarkDown文件ToolStripMenuItem"
-        Me.打开MarkDown文件ToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.打开MarkDown文件ToolStripMenuItem.Text = "打开MarkDown文件"
-        '
-        '保存MarkDown文件ToolStripMenuItem
-        '
-        Me.保存MarkDown文件ToolStripMenuItem.Name = "保存MarkDown文件ToolStripMenuItem"
-        Me.保存MarkDown文件ToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.保存MarkDown文件ToolStripMenuItem.Text = "保存MarkDown文件"
-        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(876, 620)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
